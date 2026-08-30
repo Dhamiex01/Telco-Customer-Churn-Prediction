@@ -908,12 +908,6 @@
             ) || 0;
 
 
-        const confidence =
-            Number(
-                result.confidence
-            ) || 0;
-
-
         const riskLevel =
             result.risk_level ||
             (
@@ -945,19 +939,6 @@
             <p class="prediction-message">
                 ${escapeHtml(message)}
             </p>
-
-
-            <div class="confidence-box">
-
-                <span class="confidence-label">
-                    Model confidence
-                </span>
-
-                <span class="confidence-value">
-                    ${formatPercentage(confidence)}
-                </span>
-
-            </div>
 
 
             <div class="probability-box">

@@ -461,24 +461,6 @@ def predict(customer: CustomerData):
             churn_probability >= threshold
         )
 
-
-        # ----------------------------------------------------
-        # CONFIDENCE
-        # ----------------------------------------------------
-
-        if prediction == 1:
-
-            confidence = (
-                churn_probability
-            )
-
-        else:
-
-            confidence = (
-                1 - churn_probability
-            )
-
-
         # ----------------------------------------------------
         # RESULT
         # ----------------------------------------------------
