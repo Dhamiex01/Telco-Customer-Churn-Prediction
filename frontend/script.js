@@ -902,12 +902,6 @@
             "";
 
 
-        const probability =
-            Number(
-                result.churn_probability
-            ) || 0;
-
-
         const riskLevel =
             result.risk_level ||
             (
@@ -940,34 +934,6 @@
                 ${escapeHtml(message)}
             </p>
 
-
-            <div class="probability-box">
-
-                <div class="probability-top">
-
-                    <span class="probability-label">
-                        Churn probability
-                    </span>
-
-                    <span class="probability-value">
-                        ${formatPercentage(probability)}
-                    </span>
-
-                </div>
-
-
-                <div class="progress-track">
-
-                    <div
-                        class="progress-bar"
-                        style="width: ${clamp(
-                            probability,
-                            0,
-                            100
-                        )}%"
-                    ></div>
-
-                </div>
 
             </div>
 

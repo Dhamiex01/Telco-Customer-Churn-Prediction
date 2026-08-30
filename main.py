@@ -519,11 +519,6 @@ def predict(customer: CustomerData):
                 2
             ),
 
-            "confidence": round(
-                confidence * 100,
-                2
-            ),
-
             "threshold": round(
                 threshold * 100,
                 2
