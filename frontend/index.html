@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Customer Churn Prediction
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/frontend/style.css?v=10"
+    >
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <main class="container">
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ↗
+                </div>
+
+                <span>
+                    Customer Churn AI
+                </span>
+
+            </div>
+
+            <h1>
+                Customer Churn Prediction
+            </h1>
+
+            <p class="intro">
+                Use our machine-learning model to assess
+                the likelihood of a customer leaving the service.
+            </p>
+
+        </header>
+
+
+        <form id="churnForm" novalidate>
+
+
+            <!-- =================================================
+                 CUSTOMER INFORMATION
+                 ================================================= -->
+
+            <section class="form-section">
+
+                <h2>
+                    Customer Information
+                </h2>
+
+                <p class="section-description">
+                    Basic information about the customer.
+                </p>
+
+
+                <div class="form-grid">
+
+
+                    <!-- GENDER -->
+
+                    <div class="form-group">
+
+                        <label for="gender">
+                            Gender
+                        </label>
+
+                        <select
+                            id="gender"
+                            name="gender"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="gender-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- SENIOR CITIZEN -->
+
+                    <div class="form-group">
+
+                        <label for="SeniorCitizen">
+                            Senior Citizen
+                        </label>
+
+                        <select
+                            id="SeniorCitizen"
+                            name="SeniorCitizen"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="SeniorCitizen-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- PARTNER -->
+
+                    <div class="form-group">
+
+                        <label for="Partner">
+                            Partner
+                        </label>
+
+                        <select
+                            id="Partner"
+                            name="Partner"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="Partner-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- DEPENDENTS -->
+
+                    <div class="form-group">
+
+                        <label for="Dependents">
+                            Dependents
+                        </label>
+
+                        <select
+                            id="Dependents"
+                            name="Dependents"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="Dependents-error"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SERVICE INFORMATION
+                 ================================================= -->
+
+            <section class="form-section">
+
+                <h2>
+                    Service Information
+                </h2>
+
+                <p class="section-description">
+                    Information about the customer's subscribed services.
+                </p>
+
+
+                <div class="form-grid">
+
+
+                    <!-- TENURE -->
+
+                    <div class="form-group">
+
+                        <label for="tenure">
+                            Tenure
+                        </label>
+
+                        <input
+                            type="number"
+                            id="tenure"
+                            name="tenure"
+                            min="0"
+                            max="72"
+                            step="1"
+                            placeholder="Months"
+                            required
+                        >
+
+                        <small>
+                            Number of months the customer has stayed.
+                        </small>
+
+                        <div
+                            class="field-error"
+                            id="tenure-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- PHONE SERVICE -->
+
+                    <div class="form-group">
+
+                        <label for="PhoneService">
+                            Phone Service
+                        </label>
+
+                        <select
+                            id="PhoneService"
+                            name="PhoneService"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="PhoneService-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- MULTIPLE LINES -->
+
+                    <div class="form-group">
+
+                        <label for="MultipleLines">
+                            Multiple Lines
+                        </label>
+
+                        <select
+                            id="MultipleLines"
+                            name="MultipleLines"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                            <option value="No phone service">
+                                No phone service
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="MultipleLines-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- INTERNET SERVICE -->
+
+                    <div class="form-group">
+
+                        <label for="InternetService">
+                            Internet Service
+                        </label>
+
+                        <select
+                            id="InternetService"
+                            name="InternetService"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="DSL">
+                                DSL
+                            </option>
+
+                            <option value="Fiber optic">
+                                Fiber optic
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="InternetService-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- ONLINE SECURITY -->
+
+                    <div class="form-group">
+
+                        <label for="OnlineSecurity">
+                            Online Security
+                        </label>
+
+                        <select
+                            id="OnlineSecurity"
+                            name="OnlineSecurity"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                            <option value="No internet service">
+                                No internet service
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="OnlineSecurity-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- ONLINE BACKUP -->
+
+                    <div class="form-group">
+
+                        <label for="OnlineBackup">
+                            Online Backup
+                        </label>
+
+                        <select
+                            id="OnlineBackup"
+                            name="OnlineBackup"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                            <option value="No internet service">
+                                No internet service
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="OnlineBackup-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- DEVICE PROTECTION -->
+
+                    <div class="form-group">
+
+                        <label for="DeviceProtection">
+                            Device Protection
+                        </label>
+
+                        <select
+                            id="DeviceProtection"
+                            name="DeviceProtection"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                            <option value="No internet service">
+                                No internet service
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="DeviceProtection-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- TECH SUPPORT -->
+
+                    <div class="form-group">
+
+                        <label for="TechSupport">
+                            Tech Support
+                        </label>
+
+                        <select
+                            id="TechSupport"
+                            name="TechSupport"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                            <option value="No internet service">
+                                No internet service
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="TechSupport-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- STREAMING TV -->
+
+                    <div class="form-group">
+
+                        <label for="StreamingTV">
+                            Streaming TV
+                        </label>
+
+                        <select
+                            id="StreamingTV"
+                            name="StreamingTV"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                            <option value="No internet service">
+                                No internet service
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="StreamingTV-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- STREAMING MOVIES -->
+
+                    <div class="form-group">
+
+                        <label for="StreamingMovies">
+                            Streaming Movies
+                        </label>
+
+                        <select
+                            id="StreamingMovies"
+                            name="StreamingMovies"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                            <option value="No internet service">
+                                No internet service
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="StreamingMovies-error"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CONTRACT & BILLING
+                 ================================================= -->
+
+            <section class="form-section">
+
+                <h2>
+                    Contract & Billing
+                </h2>
+
+                <p class="section-description">
+                    Information about the customer's contract and payments.
+                </p>
+
+
+                <div class="form-grid">
+
+
+                    <!-- CONTRACT -->
+
+                    <div class="form-group">
+
+                        <label for="Contract">
+                            Contract
+                        </label>
+
+                        <select
+                            id="Contract"
+                            name="Contract"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Month-to-month">
+                                Month-to-month
+                            </option>
+
+                            <option value="One year">
+                                One year
+                            </option>
+
+                            <option value="Two year">
+                                Two year
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="Contract-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- PAPERLESS BILLING -->
+
+                    <div class="form-group">
+
+                        <label for="PaperlessBilling">
+                            Paperless Billing
+                        </label>
+
+                        <select
+                            id="PaperlessBilling"
+                            name="PaperlessBilling"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Yes">
+                                Yes
+                            </option>
+
+                            <option value="No">
+                                No
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="PaperlessBilling-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- PAYMENT METHOD -->
+
+                    <div class="form-group">
+
+                        <label for="PaymentMethod">
+                            Payment Method
+                        </label>
+
+                        <select
+                            id="PaymentMethod"
+                            name="PaymentMethod"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Select
+                            </option>
+
+                            <option value="Electronic check">
+                                Electronic check
+                            </option>
+
+                            <option value="Mailed check">
+                                Mailed check
+                            </option>
+
+                            <option value="Bank transfer (automatic)">
+                                Bank transfer (automatic)
+                            </option>
+
+                            <option value="Credit card (automatic)">
+                                Credit card (automatic)
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="PaymentMethod-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- MONTHLY CHARGES -->
+
+                    <div class="form-group">
+
+                        <label for="MonthlyCharges">
+                            Monthly Charges
+                        </label>
+
+                        <input
+                            type="number"
+                            id="MonthlyCharges"
+                            name="MonthlyCharges"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter monthly charges"
+                            required
+                        >
+
+                        <small>
+                            Monthly amount paid by the customer.
+                        </small>
+
+                        <div
+                            class="field-error"
+                            id="MonthlyCharges-error"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- TOTAL CHARGES -->
+
+                    <div class="form-group">
+
+                        <label for="TotalCharges">
+                            Total Charges
+                        </label>
+
+                        <input
+                            type="number"
+                            id="TotalCharges"
+                            name="TotalCharges"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter total charges"
+                            required
+                        >
+
+                        <small>
+                            Total amount charged to the customer.
+                        </small>
+
+                        <div
+                            class="field-error"
+                            id="TotalCharges-error"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUBMIT
+                 ================================================= -->
+
+            <div class="submit-area">
+
+                <button
+                    type="submit"
+                    id="predictButton"
+                >
+                    Predict Customer Churn
+                </button>
+
+                <p>
+                    This prediction is generated by a
+                    machine-learning model.
+                </p>
+
+            </div>
+
+
+        </form>
+
+    </main>
+
+</div>
+
+
+<script src="/frontend/script.js?v=10"></script>
+
+</body>
+
+</html>

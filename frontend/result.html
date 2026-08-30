@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Customer Churn Result
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/frontend/style.css?v=10"
+    >
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <main class="result-container">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="result-header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ↗
+                </div>
+
+                <span>
+                    Customer Churn AI
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             RESULT
+             ================================================= -->
+
+        <section
+            class="prediction-result"
+            id="predictionResult"
+        >
+
+            <!-- JavaScript inserts result here -->
+
+            <div class="loading-result">
+
+                Loading prediction...
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CUSTOMER INFORMATION
+             ================================================= -->
+
+        <section class="customer-result-section">
+
+            <h2>
+                Customer Information
+            </h2>
+
+            <div
+                class="customer-result-grid"
+                id="customerInformation"
+            >
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BUTTON
+             ================================================= -->
+
+        <div class="result-actions">
+
+            <button
+                type="button"
+                id="newPrediction"
+                class="secondary-button"
+            >
+                New Prediction
+            </button>
+
+        </div>
+
+
+    </main>
+
+</div>
+
+
+<script src="/frontend/script.js?v=10"></script>
+
+</body>
+
+</html>

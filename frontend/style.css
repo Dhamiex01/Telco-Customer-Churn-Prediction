@@ -1,0 +1,1110 @@
+/* ============================================================
+   CUSTOMER CHURN AI
+   COMPLETE APPLICATION STYLES
+   ============================================================ */
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f3f6fb;
+
+    color: #0d4787;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 28px 20px 50px;
+}
+
+
+/* ============================================================
+   MAIN CONTAINER
+   ============================================================ */
+
+.container,
+.result-container {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 42px 50px 50px;
+
+    box-shadow:
+        0 15px 45px rgba(25, 65, 110, 0.10);
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 48px;
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    color: #0d4787;
+}
+
+
+.brand-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #2868d7;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+.header h1 {
+
+    margin: 0;
+
+    color: #064681;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+
+.intro {
+
+    margin: 18px auto 0;
+
+    max-width: 760px;
+
+    color: #5075a8;
+
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   FORM SECTION
+   ============================================================ */
+
+.form-section {
+
+    margin-bottom: 48px;
+}
+
+
+.form-section h2 {
+
+    margin: 0;
+
+    color: #064681;
+
+    font-size: 25px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+}
+
+
+.section-description {
+
+    margin: 6px 0 28px;
+
+    color: #5c7eac;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   FORM GRID
+   ============================================================ */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 24px;
+
+    row-gap: 25px;
+}
+
+
+/* ============================================================
+   FORM GROUP
+   ============================================================ */
+
+.form-group {
+
+    min-width: 0;
+
+    position: relative;
+}
+
+
+/* ============================================================
+   LABEL
+   ============================================================ */
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #073f79;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   INPUTS
+   ============================================================ */
+
+.form-group input,
+.form-group select {
+
+    display: block;
+
+    width: 100%;
+
+    height: 50px;
+
+    padding:
+        0 18px;
+
+    border:
+        1px solid #c7d9ef;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #124d8f;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease;
+}
+
+
+.form-group input::placeholder {
+
+    color: #9bb3d1;
+}
+
+
+.form-group select {
+
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+/* ============================================================
+   NORMAL FOCUS
+   ============================================================ */
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #2868d7;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            40,
+            104,
+            215,
+            0.10
+        );
+}
+
+
+/* ============================================================
+   HELPER TEXT
+   ============================================================ */
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #587eae;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* ============================================================
+   INVALID FIELD
+   ============================================================ */
+
+.form-group input.input-invalid,
+.form-group select.input-invalid {
+
+    border-color:
+        #ff3b30 !important;
+
+    background-color:
+        #fff7f7 !important;
+
+    box-shadow:
+        none !important;
+
+    outline:
+        none !important;
+}
+
+
+/* ============================================================
+   INVALID FOCUS
+   ============================================================ */
+
+.form-group input.input-invalid:focus,
+.form-group select.input-invalid:focus {
+
+    border-color:
+        #ff3b30 !important;
+
+    background-color:
+        #fff7f7 !important;
+
+    box-shadow:
+        0 0 0 2px rgba(
+            255,
+            59,
+            48,
+            0.08
+        ) !important;
+}
+
+
+/* ============================================================
+   ERROR MESSAGE
+   ============================================================ */
+
+.field-error {
+
+    display: none;
+
+    margin-top: 7px;
+
+    color: #ff3b30;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+
+.field-error.show {
+
+    display: block;
+}
+
+
+/* ============================================================
+   ERROR ICON
+   ============================================================ */
+
+.field-error::before {
+
+    content: "!";
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 17px;
+
+    height: 17px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #ff3b30;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    vertical-align: -2px;
+}
+
+
+/* ============================================================
+   VALID FIELD
+   ============================================================ */
+
+.form-group input.input-valid,
+.form-group select.input-valid {
+
+    border-color:
+        #c7d9ef;
+
+    background-color:
+        #ffffff;
+}
+
+
+/* ============================================================
+   SUBMIT AREA
+   ============================================================ */
+
+.submit-area {
+
+    text-align: center;
+
+    padding-top: 5px;
+}
+
+
+.submit-area button {
+
+    width: 100%;
+
+    min-height: 55px;
+
+    padding:
+        0 25px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #2467d3;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        transform 0.1s ease,
+        opacity 0.2s ease;
+}
+
+
+.submit-area button:hover {
+
+    background: #1e59bb;
+}
+
+
+.submit-area button:active {
+
+    transform: scale(0.99);
+}
+
+
+.submit-area button:disabled {
+
+    opacity: 0.65;
+
+    cursor: wait;
+}
+
+
+.submit-area p {
+
+    margin:
+        11px 0 0;
+
+    color: #6383ad;
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   RESULT HEADER
+   ============================================================ */
+
+.result-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.result-header .brand {
+
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   RESULT
+   ============================================================ */
+
+.prediction-result {
+
+    text-align: center;
+
+    padding:
+        20px 20px 35px;
+}
+
+
+.result-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+    font-weight: 700;
+}
+
+
+.result-icon.high {
+
+    background: #ffe3e3;
+
+    color: #e72c2c;
+}
+
+
+.result-icon.low {
+
+    background: #e4f6eb;
+
+    color: #218a4a;
+}
+
+
+.prediction-result h1 {
+
+    margin: 0;
+
+    color: #064681;
+
+    font-size: 34px;
+
+    line-height: 1.25;
+}
+
+
+.prediction-message {
+
+    margin:
+        12px auto 30px;
+
+    max-width: 700px;
+
+    color: #5478aa;
+
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   CONFIDENCE
+   ============================================================ */
+
+.confidence-box {
+
+    width: 320px;
+
+    max-width: 100%;
+
+    margin: 0 auto 25px;
+
+    padding:
+        17px 24px;
+
+    border-radius: 14px;
+
+    background: #f3f7fd;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    text-align: left;
+}
+
+
+.confidence-label {
+
+    color: #5577a7;
+
+    font-size: 15px;
+}
+
+
+.confidence-value {
+
+    color: #064681;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   PROBABILITY
+   ============================================================ */
+
+.probability-box {
+
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    padding:
+        21px 26px;
+
+    border:
+        1px solid #d5e2f3;
+
+    border-radius: 14px;
+
+    text-align: left;
+}
+
+
+.probability-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 12px;
+}
+
+
+.probability-label {
+
+    color: #5577a7;
+
+    font-size: 15px;
+}
+
+
+.probability-value {
+
+    color: #064681;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.progress-track {
+
+    width: 100%;
+
+    height: 12px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e7eef8;
+}
+
+
+.progress-bar {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #2467d3;
+
+    transition:
+        width 0.5s ease;
+}
+
+
+/* ============================================================
+   RISK LEVEL
+   ============================================================ */
+
+.risk-box {
+
+    width: 400px;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding:
+        15px 24px;
+
+    border-radius: 13px;
+
+    background: #f3f7fd;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    text-align: left;
+}
+
+
+.risk-label {
+
+    color: #5577a7;
+}
+
+
+.risk-value {
+
+    color: #064681;
+
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   CUSTOMER RESULT SECTION
+   ============================================================ */
+
+.customer-result-section {
+
+    margin-top: 10px;
+}
+
+
+.customer-result-section h2 {
+
+    margin:
+        0 0 24px;
+
+    text-align: center;
+
+    color: #064681;
+
+    font-size: 25px;
+}
+
+
+.customer-result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 13px 14px;
+}
+
+
+.customer-field {
+
+    min-width: 0;
+
+    min-height: 47px;
+
+    padding:
+        11px 15px;
+
+    border:
+        1px solid #d5e2f3;
+
+    border-radius: 9px;
+
+    background: #fbfdff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.customer-field-label {
+
+    color: #5577a7;
+
+    font-size: 13px;
+}
+
+
+.customer-field-value {
+
+    color: #064681;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   RESULT ACTIONS
+   ============================================================ */
+
+.result-actions {
+
+    text-align: center;
+
+    margin-top: 35px;
+}
+
+
+.secondary-button {
+
+    min-width: 220px;
+
+    min-height: 50px;
+
+    padding:
+        0 25px;
+
+    border:
+        1px solid #2467d3;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #2467d3;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+
+.secondary-button:hover {
+
+    background: #2467d3;
+
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+
+.loading-result {
+
+    padding: 60px 20px;
+
+    color: #587eae;
+
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   API ERROR
+   ============================================================ */
+
+.api-error {
+
+    padding: 20px;
+
+    border:
+        1px solid #ffcaca;
+
+    border-radius: 12px;
+
+    background: #fff6f6;
+
+    color: #d92727;
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 850px) {
+
+    .container,
+    .result-container {
+
+        padding:
+            35px 28px 40px;
+    }
+
+    .header h1 {
+
+        font-size: 32px;
+    }
+
+    .form-grid {
+
+        column-gap: 18px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .page {
+
+        padding:
+            12px 10px 30px;
+    }
+
+
+    .container,
+    .result-container {
+
+        padding:
+            28px 18px 35px;
+
+        border-radius: 14px;
+    }
+
+
+    .header {
+
+        margin-bottom: 38px;
+    }
+
+
+    .header h1 {
+
+        font-size: 28px;
+    }
+
+
+    .intro {
+
+        font-size: 14px;
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+        row-gap: 22px;
+    }
+
+
+    .form-section {
+
+        margin-bottom: 40px;
+    }
+
+
+    .form-section h2 {
+
+        font-size: 22px;
+    }
+
+
+    .customer-result-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .prediction-result h1 {
+
+        font-size: 28px;
+    }
+
+
+    .confidence-box,
+    .risk-box {
+
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .container,
+    .result-container {
+
+        padding:
+            25px 14px 30px;
+    }
+
+
+    .brand {
+
+        font-size: 16px;
+    }
+
+
+    .brand-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 21px;
+    }
+
+
+    .header h1 {
+
+        font-size: 25px;
+    }
+
+
+    .customer-field {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .customer-field-value {
+
+        text-align: left;
+    }
+}
