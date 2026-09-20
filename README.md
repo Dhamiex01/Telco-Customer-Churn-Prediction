@@ -2,8 +2,7 @@
 
 A machine learning web application that predicts whether a telecom customer is likely to churn, built with FastAPI and deployed on Render.
 
-**Live demo:** [Add your Render URL here]
-**Repository:** [Add your GitHub repo URL here]
+**Live demo:** https://telco-customer-churn-prediction-irmm.onrender.com/
 
 ## Overview
 
@@ -22,9 +21,8 @@ Customer churn is one of the biggest challenges for telecom companies. This proj
 
 | Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 |---|---|---|---|---|---|
-| Decision Tree | — | — | — | — | — |
 | Random Forest (threshold = 0.50) | 0.8006 | 0.6691 | 0.4920 | 0.5670 | 0.8430 |
-| Random Forest (threshold = 0.2812, Youden's J) | 0.7516 | 0.5207 | 0.8075 | 0.6331 | — |
+| Random Forest (threshold = 0.2812, Youden's J) | 0.7516 | 0.5207 | 0.8075 | 0.6331 | 0.8430 |
 
 *Fill in the Decision Tree row and any blanks with your final notebook output.*
 
@@ -44,7 +42,7 @@ The final deployed model uses the Random Forest classifier with the Youden's J-o
 ```
 ├── app/                    # FastAPI application
 │   ├── main.py              # API entry point and routes
-│   └── ...
+│   └── frontend
 ├── model/
 │   └── churn_model.joblib   # Trained preprocessing + classification pipeline
 ├── notebooks/
@@ -65,8 +63,8 @@ The final deployed model uses the Random Forest classifier with the Youden's J-o
 ### Installation
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-name>
+git clone <https://github.com/Dhamiex01/Telco-Customer-Churn-Prediction>
+cd <Telco-Customer-Churn-Prediction>
 pip install -r requirements.txt
 ```
 
@@ -118,11 +116,9 @@ curl -X POST "http://127.0.0.1:8000/predict" \
 }
 ```
 
-*Update the endpoint path, field names, and response shape to match your actual FastAPI implementation.*
-
 ## Dataset
 
-This project uses the [Telco Customer Churn dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn), containing customer demographics, account details, and subscribed services, with churn status as the target variable.
+This project uses the [Telco Customer Churn dataset](https://www.kaggle.com/code/danishmubashar/telco-customer-churn-80-accuracy/input), containing customer demographics, account details, and subscribed services, with churn status as the target variable.
 
 ## Deployment
 
@@ -136,9 +132,6 @@ The application is deployed on [Render](https://render.com). To deploy your own 
 
 ## Author
 
-**Dhamiex'**
-Final-year Electrical and Electronics Engineering student, Federal University of Agriculture, Abeokuta (FUNAAB)
+**Fayemi Oluwadamilare'**
 
-## License
 
-[Add your chosen license, e.g. MIT]
